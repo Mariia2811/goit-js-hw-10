@@ -1,9 +1,22 @@
-export default function fetchCountries (name) {
-    fetch('https://restcountries.com/v3.1/all?fields=name,capital,population,flags,languages')
+import Notiflix from 'notiflix';
+
+export function fetchCountries(name) {
+  const fields = 'name,capital,population,flags,languages';
+  const url = `https://restcountries.com/v2/name/${name}?fields=${fields}`;
+
+  return fetch(url)
     .then(response => {
-    return response.json();
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('Country not found');
+        } else {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+      }
+      return response.json();
     })
-    .then(countries => {
-    console.log(countries);
-    }).catch(error => { console.log(error); })
+    .catch(error => {
+      Notiflix.Notify.failure('Oops, there is no country with that name.');
+      throw error;
+    });
 }

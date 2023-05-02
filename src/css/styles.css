@@ -18,3 +18,66 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.country-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.country-list li {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+}
+
+.country-list li:last-child {
+  border-bottom: none;
+}
+
+.country-list li:hover {
+  background-color: #e5e5e5;
+}
+
+.country-list {
+  list-style-type: none;
+}
+
+img{
+  width: 150px;
+  height: auto;
+  margin-right: 25px;
+}
+
+p {
+  font-weight: bold;
+}
